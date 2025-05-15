@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import useSound from 'use-sound';
+import './lightsaber.css';
 
 type SaberColor = 'blue' | 'red' | 'green' | 'purple' | 'yellow';
 
