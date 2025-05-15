@@ -8,9 +8,9 @@ type SaberColor = 'blue' | 'red' | 'green' | 'purple' | 'yellow';
 
 export default function LightsaberV2() {
   const [isOn, setIsOn] = useState(false);
-  const [playOn] = useSound('/sounds/lightsaber-on.mp3');
-  const [playOff] = useSound('/sounds/lightsaber-off.mp3');
-  const [playSwing] = useSound('/sounds/lightsaber-swing.mp3');
+  const [playOn] = useSound('/sounds/switch/activate.wav');
+  const [playOff] = useSound('/sounds/switch/deactivate.wav');
+  const [playSwing] = useSound('/sounds/swing/swing_1.wav');
   const [hasPermission, setHasPermission] = useState(false);
   const [currentColor, setCurrentColor] = useState<SaberColor>('blue');
 
@@ -131,7 +131,7 @@ export default function LightsaberV2() {
           textShadow: `0 0 5px ${colorConfig[currentColor].shadow}, 0 0 5px ${colorConfig[currentColor].shadow}, 0 0 5px ${colorConfig[currentColor].shadow}`,
         }}
       >
-        Light Saber
+        Light Saber Test
       </h1>
 
       <div className="fixed top-4 right-[5%] bg-[#333] p-4 text-[#BBB] w-[175px] text-sm">
