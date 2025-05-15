@@ -97,6 +97,11 @@ export default function LightsaberV3() {
         <p>Make your phone a lightsaber</p>
       </div>
 
+      <input
+        type="image"
+        src="/image/lightsaber.webp"
+        id="lightsaber-pic"
+      ></input>
       <button onClick={handleClick}>Ignite phone saber</button>
     </div>
   );
