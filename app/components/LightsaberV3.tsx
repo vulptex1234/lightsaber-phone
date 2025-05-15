@@ -92,21 +92,35 @@ export default function LightsaberV3() {
   };
 
   return (
-    <div>
-      <h1 className="title">Saber Phone</h1>
-      <div>
-        <p>Make your phone a lightsaber</p>
-      </div>
+    // <div>
+    //   <h1 className="title">Saber Phone</h1>
+    //   <div>
+    //     <p>Make your phone a lightsaber</p>
+    //   </div>
 
-      <button onClick={handleClick}>Ignite phone saber</button>
+    //   <button onClick={handleClick}>Ignite phone saber</button>
 
+    //   <div></div>
+    // </div>
+    <>
+      <h1>Phone Saber</h1>
+      <label htmlFor="green">Green</label>
+      <input type="radio" id="green" name="color" checked />
+      <label htmlFor="blue">Blue</label>
+      <input type="radio" id="blue" name="color" />
+      <label htmlFor="yellow">Yellow</label>
+      <input type="radio" id="yellow" name="color" />
+      <label htmlFor="purple">Purple</label>
+      <input type="radio" id="purple" name="color" />
+      <label htmlFor="red">Red</label>
+      <input type="radio" id="red" name="color" />
+      <label htmlFor="darksaber">Darksaber</label>
+      <input type="radio" id="darksaber" name="color" />
       <div>
-        <input
-          type="image"
-          src="/image/lightsaber.webp"
-          className="lightsaber-pic"
-        ></input>
+        <button onClick={handleClick} id="on-off"></button>
+        <div className="blade"></div>
+        <label className="hilt" htmlFor="on-off"></label>
       </div>
-    </div>
+    </>
   );
 }
