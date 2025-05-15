@@ -1,7 +1,7 @@
 'use client';
 
-import LightsaberV2 from './components/LightsaberV2';
+import Lightsaber from './components/Lightsaber';
 
 export default function Home() {
-  return <LightsaberV2 />;
+  return <Lightsaber />;
 }
