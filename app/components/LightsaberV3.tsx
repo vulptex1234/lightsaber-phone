@@ -96,6 +96,8 @@ export default function LightsaberV3() {
       <div>
         <p>Make your phone a lightsaber</p>
       </div>
+
+      <button onClick={handleClick}>Ignite phone saber</button>
     </div>
   );
 }
