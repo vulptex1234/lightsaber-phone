@@ -3,7 +3,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import useSound from 'use-sound';
-import 'app/globals.css';
 
 type SaberColor = 'blue' | 'red' | 'green' | 'purple' | 'yellow';
 
@@ -101,7 +100,7 @@ export default function LightsaberV3() {
       <input
         type="image"
         src="/image/lightsaber.webp"
-        id="lightsaber-pic"
+        className="lightsaber-pic"
       ></input>
       <button onClick={handleClick}>Ignite phone saber</button>
     </div>
