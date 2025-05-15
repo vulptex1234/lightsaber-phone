@@ -82,7 +82,7 @@ export default function LightsaberV2() {
             (acceleration.z || 0) ** 2
         );
 
-        if (totalAcceleration > 15) {
+        if (totalAcceleration > 5) {
           const randomIndex = Math.floor(Math.random() * swingSounds.length);
           swingSounds[randomIndex]();
           lastSwing = now;
