@@ -16,5 +16,5 @@ body {
 }
 
 lightsaber-pic {
-  transform: rotate(90);
+  transform: rotate();
 }
