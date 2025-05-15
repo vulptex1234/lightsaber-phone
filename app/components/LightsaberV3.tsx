@@ -103,7 +103,7 @@ export default function LightsaberV3() {
     //   <div></div>
     // </div>
     <>
-      <h1>Phone Saber</h1>
+      {/* <h1>Phone Saber</h1> */}
       <label htmlFor="green">Green</label>
       <input type="radio" id="green" name="color" checked />
       <label htmlFor="blue">Blue</label>
