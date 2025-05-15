@@ -104,7 +104,7 @@ export default function LightsaberV3() {
     // </div>
     <>
       {/* <h1>Phone Saber</h1> */}
-      <label htmlFor="green">Green</label>
+      {/* <label htmlFor="green">Green</label>
       <input type="radio" id="green" name="color" checked />
       <label htmlFor="blue">Blue</label>
       <input type="radio" id="blue" name="color" />
@@ -115,7 +115,7 @@ export default function LightsaberV3() {
       <label htmlFor="red">Red</label>
       <input type="radio" id="red" name="color" />
       <label htmlFor="darksaber">Darksaber</label>
-      <input type="radio" id="darksaber" name="color" />
+      <input type="radio" id="darksaber" name="color" /> */}
       <div className="lightsaber">
         <button onClick={handleClick} id="on-off"></button>
         <div className="blade"></div>
