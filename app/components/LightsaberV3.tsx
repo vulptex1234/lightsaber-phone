@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import useSound from 'use-sound';
-import './lightsaber.css';
+// import './lightsaber.css';
 
 type SaberColor = 'blue' | 'red' | 'green' | 'purple' | 'yellow';
 
@@ -93,17 +93,20 @@ export default function LightsaberV3() {
 
   return (
     <div>
-      <h1>Saber Phone</h1>
+      <h1 className="title">Saber Phone</h1>
       <div>
         <p>Make your phone a lightsaber</p>
       </div>
 
-      <input
-        type="image"
-        src="/image/lightsaber.webp"
-        className="lightsaber-pic"
-      ></input>
       <button onClick={handleClick}>Ignite phone saber</button>
+
+      <div>
+        <input
+          type="image"
+          src="/image/lightsaber.webp"
+          className="lightsaber-pic"
+        ></input>
+      </div>
     </div>
   );
 }

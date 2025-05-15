@@ -15,6 +15,6 @@
   -webkit-tap-highlight-color: transparent;
 } */
 
-lightsaber-pic {
-  transform: rotate(90);
+.lightsaber-pic {
+  transform: rotate(90deg);
 }
