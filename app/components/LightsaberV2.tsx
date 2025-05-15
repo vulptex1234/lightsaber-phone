@@ -10,7 +10,13 @@ export default function LightsaberV2() {
   const [isOn, setIsOn] = useState(false);
   const [playOn] = useSound('/sounds/switch/activate.wav');
   const [playOff] = useSound('/sounds/switch/deactivate.wav');
-  const [playSwing] = useSound('/sounds/swing/swing_1.wav');
+  const swingSounds = [
+    useSound('/sounds/swing/swing_1.wav')[0],
+    useSound('/sounds/swing/swing_2.wav')[0],
+    useSound('/sounds/swing/swing_3.wav')[0],
+    useSound('/sounds/swing/swing_4.wav')[0],
+    useSound('/sounds/swing/swing_5.wav')[0],
+  ];
   const [hasPermission, setHasPermission] = useState(false);
   const [currentColor, setCurrentColor] = useState<SaberColor>('blue');
 
@@ -62,7 +68,7 @@ export default function LightsaberV2() {
 
   useEffect(() => {
     let lastSwing = 0;
-    const SWING_COOLDOWN = 500;
+    const SWING_COOLDOWN = 250;
 
     const handleMotion = (event: DeviceMotionEvent) => {
       const now = Date.now();
@@ -77,7 +83,8 @@ export default function LightsaberV2() {
         );
 
         if (totalAcceleration > 15) {
-          playSwing();
+          const randomIndex = Math.floor(Math.random() * swingSounds.length);
+          swingSounds[randomIndex]();
           lastSwing = now;
         }
       }
@@ -90,7 +97,7 @@ export default function LightsaberV2() {
     return () => {
       window.removeEventListener('devicemotion', handleMotion);
     };
-  }, [isOn, playSwing, hasPermission]);
+  }, [isOn, swingSounds, hasPermission]);
 
   const handleClick = () => {
     if (!hasPermission) {
