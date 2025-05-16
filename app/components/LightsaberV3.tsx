@@ -104,6 +104,7 @@ export default function LightsaberV3() {
     //   <div></div>
     // </div>
     <>
+      <title>phone saber</title>
       {/* <h1>Phone Saber</h1> */}
       <label htmlFor="green">G</label>
       <input
