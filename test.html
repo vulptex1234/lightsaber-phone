@@ -13,8 +13,18 @@
 <input type="radio" id="darksaber" name="color" />
 
 <div class="lightsaber">
-  <input type="checkbox" id="on-off" />
+  <label class="hilt" for="on-off"></label>
+  <button id="on-off"></button>
   <!-- <button id="on-off"></button> -->
   <div class="blade"></div>
-  <label class="hilt" for="on-off"> </label>
+  <!-- <div class="hilt" id="hilt"></div> -->
 </div>
+
+<script>
+  const button = document.getElementById('on-off');
+  const blade = document.querySelector('.blade');
+
+  button.addEventListener('click', () => {
+    blade.classList.toggle('on');
+  });
+</script>

@@ -44,6 +44,7 @@ label:not(.hilt) {
 }
 
 #on-off {
+  display: none;
   position: absolute;
   width: 0;
   height: 0;
@@ -96,6 +97,11 @@ label:not(.hilt) {
 
   transition: transform 50ms ease-out;
   transform-origin: bottom;
+  transform: scaleY(0);
+}
+
+.blade.on {
+  transform: scaleY(1);
 }
 
 .blade::after {
@@ -128,16 +134,6 @@ label:not(.hilt) {
   50% {
     opacity: 0.5;
   }
-}
-
-/* Turn lightsaber on and off */
-
-#on-off:not(:checked) + .blade {
-  transform: scaleY(0);
-}
-
-#on-off:checked + .blade {
-  transform: scaleY(1);
 }
 
 /* change the color */
@@ -185,21 +181,6 @@ embed {
   height: 0;
 }
 
-#on-off:checked ~ embed {
+#on-off.active ~ embed {
   display: block;
-}
-
-/* YT link */
-.yt {
-  color: hsl(0 0% 100% / 0.5);
-  font-size: 1rem;
-  padding: 1em;
-  margin: 0 0 1em 0;
-  grid-column: 1 / -1;
-}
-
-.yt:hover {
-  color: white;
-  text-shadow: 0 0 0.5em hsl(var(--blade-hue) 50% 50%),
-    0 0 1em hsl(var(--blade-hue) 50% 50% / 0.75);
 }

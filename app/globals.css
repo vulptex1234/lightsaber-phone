@@ -49,6 +49,7 @@ label:not(.hilt) {
 }
 
 #on-off {
+  display: none;
   position: absolute;
   width: 0;
   height: 0;
@@ -103,13 +104,13 @@ label:not(.hilt) {
   transform-origin: bottom;
 
   /* 変更 */
-  transform: scaleY(0);
+  /* transform: scaleY(0); */
 }
 
 /* 変更 */
-.blade-on {
+/* .blade-on {
   transform: scaleY(1);
-}
+} */
 
 .blade::after {
   content: '';
@@ -198,9 +199,9 @@ embed {
   height: 0;
 }
 
-/* #on-off:checked ~ embed {
+#on-off:checked ~ embed {
   display: block;
-} */
+}
 
 #on-off.active ~ embed {
   display: block;

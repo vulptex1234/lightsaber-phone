@@ -91,6 +91,13 @@ export default function LightsaberV3() {
     setIsOn(!isOn);
   };
 
+  const button = document.getElementById('on-off');
+  const blade = document.querySelector('blade');
+
+  button.addEventListener('click', () => {
+    blade.classList.toggle('on');
+  });
+
   return (
     // <div>
     //   <h1 className="title">Saber Phone</h1>
