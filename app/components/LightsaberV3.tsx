@@ -89,14 +89,14 @@ export default function LightsaberV3() {
       saberActivate();
     }
     setIsOn(!isOn);
+
+    const button = document.getElementById('on-off');
+    const blade = document.querySelector('.blade');
+
+    button.addEventListener('click', () => {
+      blade.classList.toggle('on');
+    });
   };
-
-  const button = document.getElementById('on-off');
-  const blade = document.querySelector('blade');
-
-  button.addEventListener('click', () => {
-    blade.classList.toggle('on');
-  });
 
   return (
     // <div>
