@@ -89,13 +89,6 @@ export default function LightsaberV3() {
       saberActivate();
     }
     setIsOn(!isOn);
-
-    const button = document.getElementById('on-off');
-    const blade = document.querySelector('.blade');
-
-    button.addEventListener('click', () => {
-      blade.classList.toggle('on');
-    });
   };
 
   return (
@@ -125,7 +118,7 @@ export default function LightsaberV3() {
       <input type="radio" id="darksaber" name="color" /> */}
       <div className="lightsaber">
         <button onClick={handleClick} id="on-off"></button>
-        <div className="blade"></div>
+        <div className={`blade ${isOn ? 'on' : ''} `}></div>
         <label className="hilt" htmlFor="on-off"></label>
       </div>
     </>
