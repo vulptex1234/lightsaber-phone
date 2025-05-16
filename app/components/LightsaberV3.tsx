@@ -5,9 +5,10 @@ import { motion } from 'framer-motion';
 import useSound from 'use-sound';
 // import './lightsaber.css';
 
-type SaberColor = 'blue' | 'red' | 'green' | 'purple' | 'yellow';
+type SaberColor = 'blue' | 'red' | 'green' | 'purple' | 'yellow' | 'darksaber';
 
 export default function LightsaberV3() {
+  const [selectedColor, setSelectedColor] = useState<SaberColor>('green');
   // activate, deactivate sound
   const [isOn, setIsOn] = useState(false);
   const [saberActivate] = useSound('/sounds/switch/activate.wav');
@@ -105,17 +106,53 @@ export default function LightsaberV3() {
     <>
       {/* <h1>Phone Saber</h1> */}
       <label htmlFor="green">G</label>
-      <input type="radio" id="green" name="color" checked />
+      <input
+        type="radio"
+        id="green"
+        name="color"
+        checked={selectedColor === 'green'}
+        onChange={() => setSelectedColor('green')}
+      />
       <label htmlFor="blue">B</label>
-      <input type="radio" id="blue" name="color" />
+      <input
+        type="radio"
+        id="blue"
+        name="color"
+        checked={selectedColor === 'blue'}
+        onChange={() => setSelectedColor('blue')}
+      />
       <label htmlFor="yellow">Y</label>
-      <input type="radio" id="yellow" name="color" />
+      <input
+        type="radio"
+        id="yellow"
+        name="color"
+        checked={selectedColor === 'yellow'}
+        onChange={() => setSelectedColor('yellow')}
+      />
       <label htmlFor="purple">P</label>
-      <input type="radio" id="purple" name="color" />
+      <input
+        type="radio"
+        id="purple"
+        name="color"
+        checked={selectedColor === 'purple'}
+        onChange={() => setSelectedColor('purple')}
+      />
       <label htmlFor="red">R</label>
-      <input type="radio" id="red" name="color" />
+      <input
+        type="radio"
+        id="red"
+        name="color"
+        checked={selectedColor === 'red'}
+        onChange={() => setSelectedColor('red')}
+      />
       <label htmlFor="darksaber">D</label>
-      <input type="radio" id="darksaber" name="color" />
+      <input
+        type="radio"
+        id="darksaber"
+        name="color"
+        checked={selectedColor === 'darksaber'}
+        onChange={() => setSelectedColor('darksaber')}
+      />
       <div className="lightsaber">
         <input type="checkbox" onChange={handleClick} id="on-off" />
         {/* <button onClick={handleClick} id="on-off"></button> */}
