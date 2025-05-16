@@ -119,7 +119,7 @@ export default function LightsaberV3() {
       <div className="lightsaber">
         <button onClick={handleClick} id="on-off"></button>
         <div className={`blade ${isOn ? 'on' : ''} `}></div>
-        <label className="hilt" htmlFor="on-off"></label>
+        {/* <label className="hilt" htmlFor="on-off"></label> */}
       </div>
     </>
   );

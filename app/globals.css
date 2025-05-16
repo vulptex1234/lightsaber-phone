@@ -206,3 +206,13 @@ embed {
 #on-off.active ~ embed {
   display: block;
 }
+
+.blade {
+  transform: scaleY(0);
+  transition: transform 50ms ease-out;
+  transform-origin: bottom;
+}
+
+.blade.on {
+  transform: scaleY(1);
+}
