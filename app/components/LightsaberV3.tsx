@@ -117,7 +117,8 @@ export default function LightsaberV3() {
       <label htmlFor="darksaber">Darksaber</label>
       <input type="radio" id="darksaber" name="color" /> */}
       <div className="lightsaber">
-        <button onClick={handleClick} id="on-off"></button>
+        <input type="checkbox" onChange={handleClick} id="on-off" />
+        {/* <button onClick={handleClick} id="on-off"></button> */}
         <div className="blade"></div>
         <label className="hilt" htmlFor="on-off"></label>
       </div>
