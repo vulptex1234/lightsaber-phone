@@ -1,7 +1,3 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 :root {
   --blade-hue: 120;
   --blade-lightness: 50%;
@@ -15,7 +11,6 @@
 
 body {
   background: #222;
-  /* background: #229; */
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: 100px 50px 1fr;
@@ -101,14 +96,6 @@ label:not(.hilt) {
 
   transition: transform 50ms ease-out;
   transform-origin: bottom;
-
-  /* 変更 */
-  transform: scaleY(0);
-}
-
-/* 変更 */
-.blade-on {
-  transform: scaleY(1);
 }
 
 .blade::after {
@@ -198,10 +185,21 @@ embed {
   height: 0;
 }
 
-/* #on-off:checked ~ embed {
+#on-off:checked ~ embed {
   display: block;
-} */
+}
 
-#on-off.active ~ embed {
-  display: block;
+/* YT link */
+.yt {
+  color: hsl(0 0% 100% / 0.5);
+  font-size: 1rem;
+  padding: 1em;
+  margin: 0 0 1em 0;
+  grid-column: 1 / -1;
+}
+
+.yt:hover {
+  color: white;
+  text-shadow: 0 0 0.5em hsl(var(--blade-hue) 50% 50%),
+    0 0 1em hsl(var(--blade-hue) 50% 50% / 0.75);
 }
