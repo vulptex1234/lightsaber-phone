@@ -118,8 +118,8 @@ export default function LightsaberV3() {
       <input type="radio" id="darksaber" name="color" /> */}
       <div className="lightsaber">
         <button onClick={handleClick} id="on-off"></button>
-        <div className={`blade ${isOn ? 'on' : ''} `}></div>
-        {/* <label className="hilt" htmlFor="on-off"></label> */}
+        <div className="blade"></div>
+        <label className="hilt" htmlFor="on-off"></label>
       </div>
     </>
   );
