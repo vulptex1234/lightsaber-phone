@@ -104,17 +104,17 @@ export default function LightsaberV3() {
     // </div>
     <>
       {/* <h1>Phone Saber</h1> */}
-      <label htmlFor="green">Green</label>
+      <label htmlFor="green">G</label>
       <input type="radio" id="green" name="color" checked />
-      <label htmlFor="blue">Blue</label>
+      <label htmlFor="blue">B</label>
       <input type="radio" id="blue" name="color" />
-      <label htmlFor="yellow">Yellow</label>
+      <label htmlFor="yellow">Y</label>
       <input type="radio" id="yellow" name="color" />
-      <label htmlFor="purple">Purple</label>
+      <label htmlFor="purple">P</label>
       <input type="radio" id="purple" name="color" />
-      <label htmlFor="red">Red</label>
+      <label htmlFor="red">R</label>
       <input type="radio" id="red" name="color" />
-      <label htmlFor="darksaber">Darksaber</label>
+      <label htmlFor="darksaber">D</label>
       <input type="radio" id="darksaber" name="color" />
       <div className="lightsaber">
         <input type="checkbox" onChange={handleClick} id="on-off" />
