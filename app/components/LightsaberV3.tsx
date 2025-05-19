@@ -21,7 +21,15 @@ export default function LightsaberV3() {
   const [swing4] = useSound('/sounds/swing/swing_4.wav');
   const [swing5] = useSound('/sounds/swing/swing_5.wav');
 
+  // hit sounds
+  const [hit1] = useSound('/sounds/hit/hit_1.wav');
+  const [hit2] = useSound('/sounds/hit/hit_2.wav');
+  const [hit3] = useSound('/sounds/hit/hit_3.wav');
+  const [hit4] = useSound('/sounds/hit/hit_4.wav');
+  const [hit5] = useSound('/sounds/hit/hit_5.wav');
+
   const swingSounds = [swing1, swing2, swing3, swing4, swing5];
+  const hitSounds = [hit1, hit2, hit3, hit4, hit5];
   // 実行時 ↓↓↓↓↓
   // const randomIndex = Math.floor(Math.random() * swingSounds.length);
   // swingSounds[randomIndex](); // ランダムなswing音を再生
@@ -48,11 +56,14 @@ export default function LightsaberV3() {
 
   useEffect(() => {
     let lastSwing = 0;
+    let lastHit = 0;
     const SWING_COOLDOWN = 250;
+    const HIT_COOLDOWN = 500;
+    const HIT_THRESHOLD = 15;
 
     const handleMotion = (event: DeviceMotionEvent) => {
       const now = Date.now();
-      if (!isOn || now - lastSwing < SWING_COOLDOWN) return;
+      if (!isOn) return;
 
       const acceleration = event.acceleration;
       if (acceleration) {
@@ -62,7 +73,14 @@ export default function LightsaberV3() {
             (acceleration.z || 0) ** 2
         );
 
-        if (totalAcceleration > 8) {
+        if (
+          totalAcceleration > HIT_THRESHOLD &&
+          now - lastHit >= HIT_COOLDOWN
+        ) {
+          const randomIndex = Math.floor(Math.random() * hitSounds.length);
+          hitSounds[randomIndex]();
+          lastHit = now;
+        } else if (totalAcceleration > 8 && now - lastSwing >= SWING_COOLDOWN) {
           const randomIndex = Math.floor(Math.random() * swingSounds.length);
           swingSounds[randomIndex]();
           lastSwing = now;
