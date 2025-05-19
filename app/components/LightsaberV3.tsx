@@ -59,7 +59,7 @@ export default function LightsaberV3() {
     let lastHit = 0;
     const SWING_COOLDOWN = 250;
     const HIT_COOLDOWN = 500;
-    const HIT_THRESHOLD = 10;
+    const HIT_THRESHOLD = 12;
 
     const handleMotion = (event: DeviceMotionEvent) => {
       const now = Date.now();
